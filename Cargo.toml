@@ -1,0 +1,20 @@
+[package]
+name = "crisclip"
+version = "0.1.0"
+edition = "2021"
+description = "Peer-to-peer clipboard sync (text and images) over the LAN"
+
+[dependencies]
+anyhow = "1"
+arboard = "3"
+blake3 = "1"
+image = { version = "0.25", default-features = false, features = ["png"] }
+rand = "0.8"
+serde = { version = "1", features = ["derive"] }
+snow = "0.9"
+toml = "0.8"
+x11rb = { version = "0.13", features = ["xfixes"] }
+
+[profile.release]
+lto = true
+strip = true
